@@ -51,13 +51,24 @@ platform :ios do
       build_number: current_build_number
     )      
     
-    match(
-      type: "appstore",
-      git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
-      app_identifier: [
-        "com.#{TEAMID}.LoopFollow"
-      ]
-    )
+#    match(
+#      type: "appstore",
+#      git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
+#      app_identifier: [
+#        "com.#{TEAMID}.LoopFollow"
+#      ]
+#    )
+
+match(
+  type: "appstore",
+  git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
+  app_identifier: [
+    "com.#{TEAMID}.LoopFollow"
+  ],
+  readonly: false,
+  force_for_new_devices: true
+)
+
 
     mapping = Actions.lane_context[
       SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING
