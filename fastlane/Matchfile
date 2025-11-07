@@ -7,4 +7,6 @@ storage_mode("git")
 
 type("appstore")
 
+readonly(false)
+
 # The docs are available on https://docs.fastlane.tools/actions/match
