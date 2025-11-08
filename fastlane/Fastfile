@@ -68,7 +68,7 @@ match(
 #  ],
 app_identifier: [
    "com.6PD248VW62.LoopFollow"
- ]
+ ],
   readonly: false,
   force_for_new_devices: true
 )
