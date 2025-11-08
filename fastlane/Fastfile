@@ -40,7 +40,8 @@ platform :ios do
     )
 
     previous_build_number = latest_testflight_build_number(
-      app_identifier: "com.#{TEAMID}.LoopFollow",
+#     app_identifier: "com.#{TEAMID}.LoopFollow",
+      app_identifier: "com.6PD248VW62.LoopFollow",
       api_key: api_key,
     )
 
@@ -62,9 +63,12 @@ platform :ios do
 match(
   type: "appstore",
   git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
-  app_identifier: [
-    "com.#{TEAMID}.LoopFollow"
-  ],
+#  app_identifier: [
+#    "com.#{TEAMID}.LoopFollow"
+#  ],
+app_identifier: [
+   "com.6PD248VW62.LoopFollow"
+ ]
   readonly: false,
   force_for_new_devices: true
 )
